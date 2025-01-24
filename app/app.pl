@@ -1,8 +1,10 @@
-use Mojolicious::Lite;
+# use Mojolicious::Lite;
 
-get '/' => sub {
-  my $c = shift;
-  $c->render(text => 'Hello, World!');
-};
+# get '/' => sub {
+#   my $c = shift;
+#   $c->render(text => 'Hello, World!');
+# };
 
-app->start;
+# app->start;
+
+print('Hello, World!');
