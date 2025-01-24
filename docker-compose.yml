@@ -3,16 +3,15 @@ version: '3.8'
 services:
   perlenv:
     ## ----- Web ----
-    # build:
-    #   context: .
-    #   dockerfile: Dockerfile
-    image: perl:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # image: perl:latest
     container_name: perl_container
     working_dir: /usr/src/app
     volumes:
       - ./app:/usr/src/app
-    # command: bash -c "perl app.pl daemon -l http://*:8080" # Web
-    command: bash -c "perl app.pl"
+    command: bash -c "perl app.pl daemon -l http://*:8080" # Web
+    # command: bash -c "perl app.pl"
     tty: true
-    ports:
-      - "8080:8080"
+    network_mode: "host"
