@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  perlenv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: perl_container
+    working_dir: /usr/src/app
+    volumes:
+      - ./app:/usr/src/app
+    command: bash -c "perl app.pl daemon -l http://*:8080"
+    tty: true
+    network_mode: "host"
